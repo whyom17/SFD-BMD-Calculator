@@ -46,7 +46,7 @@ git clone https://github.com/whyom17/SFD-BMD-Calculator.git
 ```
 # Navigate into the directory
 ```bash
-cd repo
+cd SFD-BMD-Calculator
 ```
 # Run the app
 ```bash
