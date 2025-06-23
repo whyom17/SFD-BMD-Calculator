@@ -1,4 +1,4 @@
-# Beam SFD & BMD Generator
+# SFD & BMD Generator
 
 A web-based application to generate Shear Force Diagrams (SFD) and Bending Moment Diagrams (BMD) for **simply supported beams** subjected to:
 - Point Load (PL)
@@ -42,7 +42,7 @@ This project was developed as part of a Mechanical Engineering course assignment
 ## Run Locally
 # Clone the repository
 ```bash
-git clone https://github.com/yourname/repo.git
+git clone https://github.com/whyom17/SFD-BMD-Calculator.git
 ```
 # Navigate into the directory
 ```bash
@@ -58,16 +58,11 @@ http://127.0.0.1:5000/
 ```
 
 ## Project Structure
-.
-├── app.py                  # Flask backend logic
-├── templates/
-│   └── index.html          # Frontend form
-├── static/
-│   └── beam_analysis_graph.png  # Output plot (auto-generated)
+<pre> . ├── app.py # Main Flask application (backend logic) ├── templates/ │ └── index.html # Frontend form for user input ├── static/ │ └── beam_analysis_graph.png # Generated SFD & BMD image ├── README.md # Project overview and documentation </pre>
 
+💡 Note: beam_analysis_graph.png is created dynamically when the user submits input on the form.
 
 Make sure you have Python installed along with the following packages:
-
 ```bash
 pip install flask matplotlib numpy
 ```
