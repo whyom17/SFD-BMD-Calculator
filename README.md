@@ -58,7 +58,7 @@ http://127.0.0.1:5000/
 ```
 
 ## Project Structure
-<pre> . ├── app.py # Main Flask application (backend logic) ├── templates/ │ └── index.html # Frontend form for user input ├── static/ │ └── beam_analysis_graph.png # Generated SFD & BMD image ├── README.md # Project overview and documentation </pre>
+<pre> ```text beam-sfd-bmd-generator/ ├── app.py # Main Flask backend script ├── templates/ │ └── index.html # HTML form for input ├── static/ │ └── beam_analysis_graph.png # Output plot image (generated dynamically) ├── README.md # Project documentation (this file) ``` </pre>
 
 💡 Note: beam_analysis_graph.png is created dynamically when the user submits input on the form.
 
