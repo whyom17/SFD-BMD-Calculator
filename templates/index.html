@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        SFD & BMD CALCULATOR
+    </title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .maincontainer{
+        height: 100vh;
+        width: 100vw;
+        background-color:rgb(255, 255, 255);
+    }
+    .tophead{
+        height:12%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        font-size: 1.6rem;
+        background-color: #007dff;
+        background-image: linear-gradient(176deg, #006bde 0%, #2788f0 55%, #5dacfe 100%);
+        font-family: "Nova Round", system-ui;
+        font-weight: 200;
+        font-style: bold;
+        color: #ffffff;
+    }
+    .introbox{
+        width: 100%;
+        margin: auto;
+        padding: 2px;
+        height: 22%;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #heading{
+        font-size:1.8rem;
+        font-family: "Kanit", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        color: rgb(33, 33, 33);
+    }
+    #fakeHeader{
+        height:12%;
+        width: 100%;
+        background-color: #f5f4f4;
+    }
+    #detail1{
+        max-width: 60%;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family: "Mulish", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+    .contentarea{
+        background-color:rgb(255, 255, 255);
+        display: flex;
+        flex-direction: row;
+        border: solid black 1px;
+        gap: 70px;
+    
+    }
+    .sidebarcontainer{
+        width: 30%;
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    input[type=text]{
+        width: 100px;
+        height: 27px;
+    }
+    .sidebartitle{
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #007dff;
+        background-image: linear-gradient(176deg, #006ee3 0%, #248dfd 55%, #4d9ff7 100%);
+        padding: 10px;
+        font-family: "Nova Round", system-ui;
+        color: #f5f4f4;
+        box-shadow: 0px 7px 8px 0px rgb(178, 178, 178);
+
+    }
+    .valuesection{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin: 20px;
+        padding: 10px;
+    }
+    .beam{
+        border: solid 1px black;
+        width:90%;
+        padding:15px;
+        border-radius: 10px;
+        background-color: #007dff;
+        background-image: linear-gradient(176deg, #006bde 0%, #2788f0 55%, #5dacfe 100%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-family: "Nova Round", system-ui;
+        font-size: 1.05rem;
+        color: #f4f4f4;
+        box-shadow: 0px 5px 8px 5px rgb(178, 178, 178);
+        transition-duration: 0.5s;
+    }
+    .plcontainer, .udlcontainer, .uvl1container, .uvl2container{
+        border: solid 1px black;
+        width:90%;
+        padding:10px;
+        border-radius: 10px;
+        background-color: #007dff;
+        background-image: linear-gradient(176deg, #006bde 0%, #2788f0 55%, #5dacfe 100%);
+        display: flex;
+        flex-direction: column ;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-family: "Nova Round", system-ui;
+        font-size: 0.9rem;
+        color: #f4f4f4;
+        box-shadow: 0px 5px 8px 5px rgb(178, 178, 178);
+        transition-duration: 0.5s;
+    }
+    #pl, #udl, #uvl1, #uvl2{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1.05rem;
+
+    }
+
+    .graphbox{
+        border: solid 1px black;
+        margin: 20px;
+        width: 60%;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        transition-duration: 0.5s;
+    }
+    .submit{
+        position: relative;
+    } 
+    button{
+        height: 50px;
+        width: 90px;
+        background-color:#4095f1 ;
+        box-shadow: 0px 3px 3px 3px rgb(197, 197, 197);
+
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #a4a2a2c4;  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.1s linear 0s;
+    }
+    .submit:hover{
+        transform: scale(1.02);
+    }
+    form{
+        transition-duration: 0.1s;
+    }
+    .plcontainer:hover{
+        transform: scale(1.03);
+    }
+    .udlcontainer:hover{
+        transform: scale(1.03);
+    }
+    .uvl1container:hover{
+        transform: scale(1.03);
+    }
+    .uvl2container:hover{
+        transform: scale(1.03);
+    }
+    .beam:hover{
+        transform: scale(1.03);
+    }
+    .graphbox:hover{
+        transform: scale(1.02);
+    }
+
+    </style>
+    
+</head>
+<body>
+    <div class="maincontainer">
+        <!-- heading -->
+        <div class="tophead">
+            <h1>Beam Force Analyzer</h1>
+        </div>
+
+        <div id="fakeHeader">
+        </div>
+
+        <!-- intro -->
+        <div class="introbox">
+            <div id="heading"><h2>Force Analysis of Simply Supported Beams</h2></div>
+            <div id="detail1"><p>Generalized computer program for the generation of Shear Force Diagram (SFD) and Bending Moment Diagram (BMD) of simply supported beams subjected to a point load, a uniformly distributed load and two uniformly varying load over the length of the beam</p></div>
+        </div>
+        <!-- Content area -->
+        <div class="contentarea">
+            <div class="sidebarcontainer">
+                <div class="sidebartitle">
+                    <h3>Beam Parameters</h3>
+                </div>
+                
+                <!-- entering values -->
+                <form action method="post">
+                    <div class="valuesection">
+                        <div class="beam">
+                        <div><label for="length">Beam Length:</label>
+                            <input type="text" name="beam_length" id="length" placeholder="in Meters"></div>
+                    </div>
+
+                    <!-- Point Load  -->
+                    <div class="plcontainer">
+                        <div class="pointload">
+                            <h3>Point Load Specifications</h3>
+                        </div>
+                        <div id="pl">
+                            <div><label for="pos1">Position:</label>
+                                <input type="text" name="pl_pos" id="pos1" placeholder="in Meters">
+                            </div>
+                            <div><label for="mag1">Magnitude (acting downward):</label>
+                                <input type="text" name="pl_mag" id="mag1" placeholder="in Newtons">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UDL -->
+                    <div class="udlcontainer">
+                        <div class="udl">
+                        <h3>UDL Specifications</h3>
+                        </div>
+                        <div id="udl">
+                            <div><label for="pos2">Starting Position:</label>
+                                <input type="text" name="udl_sp" id="position2" placeholder="in Meters">
+                            </div>
+                            <div><label for="length1">Ending Position:</label>
+                                <input type="text" name="udl_ep" id="length1" placeholder="in Meters">
+                            </div>
+                            <div><label for="mag2">Magnitude (acting downward):</label>
+                                <input type="text" name="udl_mag" id="mag2" placeholder="in Newton/meter">
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- UVL1 -->
+                    <div class="uvl1container">
+                        <div class="uvl1">
+                        <h3>UVL(1) Specifications</h3>
+                        </div> 
+                        <div id="uvl1">
+                            <div><label for="pos3">Starting Position:</label>
+                                <input type="text" name="uvl1_sp" id="pos3" placeholder="in Meters">
+                            </div>
+                            <div><label for="mag3">Ending Position:</label>
+                                <input type="text" name="uvl1_ep" id="mag3" placeholder="in Newtons">
+                            </div>
+                            <div><label for="mag3'">Magnitude at the starting position (acting downward):</label>
+                                <input type="text" name="uvl1_mag_sp" id="mag3'" placeholder="in Newtons">
+                            </div>
+                            <div><label for="mag3'">Magnitude at the ending position (acting downward):</label>
+                                <input type="text" name="uvl1_mag_ep" id="mag3'" placeholder="in Newtons">
+                            </div>
+                        </div> 
+                    </div>
+                    <!-- UVL2 -->
+                    <div class="uvl2container">
+                        <div class="uvl2">
+                        <h3>UVL(2) Specifications</h3>
+                        </div>
+                        <div id="uvl2">
+                            <div><label for="pos4">Starting Position:</label>
+                                <input type="text" name="uvl2_sp" id="pos4" placeholder="in Meters" >
+                            </div>
+                            <div><label for="mag4">Ending Position:</label>
+                                <input type="text" name="uvl2_ep" id="mag4" placeholder="in Newtons">
+                            </div>
+                            <div><label for="mag4'">Magnitude at the starting position (acting downward):</label>
+                                <input type="text" name="uvl2_mag_sp" id="mag4'" placeholder="in Newtons">
+                            </div>
+                            <div><label for="mag4'">Magnitude at the ending position (acting downward):</label>
+                                <input type="text" name="uvl2_mag_ep" id="mag4'" placeholder="in Newtons">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <div class="graph-container">
+                    {% if graph_url %}
+                        <img src="{{ graph_url }}" alt="Beam Analysis Graph">
+                    {% else %}
+                        <p>No graph to display. Please fill in the form.</p>
+                    {% endif %}
+    </div>
+    
+</body>
+</html>
