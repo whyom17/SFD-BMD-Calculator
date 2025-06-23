@@ -58,8 +58,15 @@ http://127.0.0.1:5000/
 ```
 
 ## Project Structure
-<pre> ```text beam-sfd-bmd-generator/ ├── app.py # Main Flask backend script ├── templates/ │ └── index.html # HTML form for input ├── static/ │ └── beam_analysis_graph.png # Output plot image (generated dynamically) ├── README.md # Project documentation (this file) ``` </pre>
-
+```text 
+  beam-sfd-bmd-generator/ 
+  ├── app.py # Main Flask backend script 
+  ├── templates/ 
+  │ └── index.html # HTML form for input 
+  ├── static/ 
+  │ └── beam_analysis_graph.png # Output plot image (generated dynamically) 
+  ├── README.md # Project documentation (this file)
+```
 💡 Note: beam_analysis_graph.png is created dynamically when the user submits input on the form.
 
 Make sure you have Python installed along with the following packages:
